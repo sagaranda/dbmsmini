@@ -1,0 +1,48 @@
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/fontawesome.min.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+  link(rel='stylesheet' href='/css/create.css')
+  title Document
+header.header
+  section.flex
+    a.logo(href='#') Web Warriors
+    nav.navbar
+      a(href='/') Home
+      a(href='/create') Create
+      a(href='/viewStartUp') View Startups
+      a(href='/viewSelected') Selected Start-ups
+      a(href='/query') Create-Query 
+ 
+    #menu-btn.fas.fa-bars
+section.display
+  h1.heading1
+    span  Selected Startups
+   
+    .box-container(style="flex-basis:40%")
+          each s in response
+            if(s.status==1)
+                .page(style="display:flex; flex-basis:40%; margin-left:3rem;")
+            
+                    .content
+                        h4 NAME OF THE STARTUP:
+                        p=s.sname
+                        h4 E-MAIL: 
+                        p=s.email
+                        h4 PROBLEM STATEMENT:
+                        p=s.pstatement
+                        h4 FUNDING: 
+                        p=s.baseFund
+                        h4 BusinessModel Link: 
+                        p=s.bModel
+                        h4 EMPLOYEMENT:
+                        p=s.employemetOpp
+                        a(href='/updateStartup')
+                            button.btn(type='button') ACCEPT
+                        a(href=`/location/${s.Sid}`)
+                            button.btn(type='submit') ADD STARTUP LOCATION
+        
+        
+script(src='./Design/script.js')

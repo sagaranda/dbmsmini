@@ -1,0 +1,35 @@
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/createStartup.css')
+  title Document
+header.header
+  section.flex
+    a.logo(href='#') Web Warriors
+    nav.navbar
+      a(href='/') Home
+      a(href='/create') Create
+      a(href='/viewStartUp') View Startups
+      a(href='/viewSelected') Selected Start-ups
+      a(href='/query') Create-Query 
+      
+    #menu-btn.fas.fa-bars
+    #menu-btn.fas.fa-bars
+section#create.create
+  h1.heading
+    | Create a
+    span  new Startup
+  .box
+    .page
+      .content
+        form.create
+          input#sname(type='text' placeholder='Enter Your start-up Name' name="sname")
+          input#pstatement(type='text' placeholder='Problem-Statement' name="pstatement")
+          input#bModel(type='text' placeholder='Drive link for Business Model' name="bModel")
+          input#baseFund(type='text' placeholder='Basic Funding of Startup' name="baseFund")
+          input#employemetOpp(type='text' placeholder='employemetOpp possibility (for eg:-100 - 200)' name="employemetOpp")
+          label(for='cars' style='font-size: 3rem; color: aqua;') Startup Field
+          input(type='submit' value='Apply')
+script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+script(src="/js/createStratup.js") 

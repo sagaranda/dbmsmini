@@ -1,0 +1,15 @@
+const viewsController=require('../controllers/viewsController');
+const authController=require('./../controllers/authController');
+const express=require('express');
+const Router=express.Router();
+Router.route('/home').get( viewsController.base);
+Router.route('/chat').get(viewsController.chat);
+Router.route('/create').get(authController.ristrictTo("startupInit"),viewsController.create);
+Router.route('/login').get(viewsController.login);
+Router.route('/signup').get(viewsController.signup);
+Router.route('/query').get(viewsController.query);
+Router.route('/location/:sid').get(authController.ristrictTo("startupInit"),viewsController.location);
+Router.route('/viewStartup').get(viewsController.viewStartup);
+Router.route('/updateStartup/:Sid').get(authController.ristrictTo("company"),viewsController.updateStartup);
+Router.route('/viewSelected').get(viewsController.viewSelectedStartup);
+module.exports=Router;
