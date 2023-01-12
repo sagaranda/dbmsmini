@@ -6,5 +6,5 @@ Router.route('/createStartupTable').get(tableController.createStartupTable);
 Router.route('/createQueryTable').get(tableController.createQueryTable)
 Router.route('/createQueryMnTable').get(tableController.createQueryMnTable);
 Router.route('/createLocationTable').get(tableController.createStartupLocation);
-
+Router.route('/createAgreementTable').get(tableController.makeAgreement);
 module.exports=Router;

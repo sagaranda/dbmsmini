@@ -19,7 +19,7 @@ exports.createUserTable = (req, res) => {
 }
 
 exports.createStartupTable = (req, res) => {
-    const qry = 'CREATE TABLE STARTUP(Sid int auto_increment, sname varchar(50), pstatement varchar(200),bModel varchar(100),baseFund int(10) default 0 ,employemetOpp int default 0,FrmId int,selId int default NULL, status int default 0,primary key(sid), foreign key(FrmId) references USER(id),foreign key(selId) references USER(id))'
+    const qry = 'CREATE TABLE STARTUP(Sid int auto_increment, sname varchar(50), pstatement varchar(200),bModel varchar(100),baseFund int(10) default 0 ,employemetOpp int default 0,FrmId int,selId int default NULL, status int default 0,state varchar(10) default "not-agreed",primary key(sid), foreign key(FrmId) references USER(id),foreign key(selId) references USER(id))'
     db.query(qry, (err, res) => {
         if (err) { throw err }
         console.log(res)
@@ -47,6 +47,17 @@ exports.createQueryMnTable = (req, res) => {
 }
 exports.createStartupLocation = (req, res) => {
     const qry = 'CREATE TABLE LOCATION(sid int , location varchar(50), primary key(sid , location), foreign key(sid) references STARTUP(Sid))'
+    db.query(qry, (err, res) => {
+        if (err) { throw err }
+        console.log(res)
+        console.log(qry)
+    })
+    res.send("locations  table created");
+}
+
+
+exports.makeAgreement = (req, res) => {
+    const qry = 'CREATE TABLE AGREEMENT(aId  int auto_increment,Agreement varchar(1000) default "This is according to company act 2013, where statup initiator and company are abide to the following data.",perShareCmp varchar(3),perShareSin varchar(3) , status int default 0 ,CID int default NULL,siEmail varchar(30),sId int,primary key(aId), foreign key(CID) references USER(id),foreign key(sId) references STARTUP(Sid))'
     db.query(qry, (err, res) => {
         if (err) { throw err }
         console.log(res)

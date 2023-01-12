@@ -12,4 +12,7 @@ Router.route('/location/:sid').get(authController.ristrictTo("startupInit"),view
 Router.route('/viewStartup').get(viewsController.viewStartup);
 Router.route('/updateStartup/:Sid').get(authController.ristrictTo("company"),viewsController.updateStartup);
 Router.route('/viewSelected').get(viewsController.viewSelectedStartup);
+Router.route('/makeAgreement/:sId/:email').get(authController.ristrictTo("company"),viewsController.makeAgreement);
+Router.route('/acceptAgreement/:Sid/:aId').get(authController.ristrictTo("startupInit"),viewsController.acceptAgreement);
+Router.route('/viewAgreement').get(viewsController.viewAgreement);
 module.exports=Router;

@@ -1,0 +1,33 @@
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/createStartup.css')
+  title Document
+header.header
+  section.flex
+    a.logo(href='#') Web Warriors
+    nav.navbar
+      a(href='/') Home
+      a(href='/create') Create
+      a(href='/viewStartUp') View Startups
+      a(href='/viewSelected') Selected Start-ups
+      a(href='/query') Create-Query 
+      
+    #menu-btn.fas.fa-bars
+    #menu-btn.fas.fa-bars
+section#create.create
+  h1.heading
+    | Create an
+    span  Agreement
+  .box
+    .page
+      .content
+        form.create
+          input#sId(type="Number" value=`${sId}` readOnly)
+          input#email(type="text" value=`${email}` readOnly)
+          input#perShareCmp(type='text' placeholder='percentage share for company' name="pstatement")
+          input#perShareSin(type='text' placeholder='percentage share for startup initiator' name="bModel")
+          input(type='submit' value='make')
+script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+script(src="/js/makeAgreement.js") 

@@ -9,4 +9,6 @@ Router.route('/createStartUp').post(authController.ristrictTo("startupInit"),sta
 Router.route('/updateStartUpLocation').post(authController.ristrictTo("startupInit"),startupController.updateStartUpLoc)
 Router.route('/selectStartup').patch(startupController.updateStartup);
 Router.route('/createQuery').post(queryController.createQuery);
+Router.route('/makeAgreement').post(startupController.makeAgreement);
+Router.route('/acceptAgreement').patch(startupController.acceptAgreemet);
 module.exports=Router;

@@ -15,34 +15,36 @@ header.header
       a(href='/viewStartUp') View Startups
       a(href='/viewSelected') Selected Start-ups
       a(href='/query') Create-Query 
- 
+
     #menu-btn.fas.fa-bars
 section.display
   h1.heading1
-    span  Selected Startups
+    span Startups
    
     .box-container(style="flex-basis:40%")
           each s in response
-            if(s.state=="not-agreed")
+            if((s.state==="not-agreed") && (s.siEmail=e) )
                 .page(style="display:flex; flex-basis:40%; margin-left:3rem;")
             
                     .content
+                        h4 Agreement 
+                        p=s.Agreement
                         h4 NAME OF THE STARTUP:
                         p=s.sname
-                        h4 E-MAIL: 
+                        h4 Start-up Email: 
+                        p=s.siEmail
+                        h4 NAME OF THE COMPANY:
+                        p=s.name
+                        h4 COMPANY Email: 
                         p=s.email
-                        h4 PROBLEM STATEMENT:
-                        p=s.pstatement
-                        h4 FUNDING: 
-                        p=s.baseFund
-                        h4 BusinessModel Link: 
-                        p=s.bModel
-                        h4 EMPLOYEMENT:
-                        p=s.employemetOpp
-                        a(href=`/makeAgreement/${s.Sid}/${s.email}`)
-                            button.btn(type='button') FIX DEAL
-                        a(href=`/location/${s.Sid}`)
-                            button.btn(type='submit') ADD STARTUP LOCATION
+                        h4 SHARE TO COMPANY in %: 
+                        p=s.perShareCmp
+                        h4 SHARE TO COMPANY in %: 
+                        p=s.perShareSin
+                        
+                        a(href=`/acceptAgreement/${s.Sid}/${s.aId}`)
+                            button.btn(type='button') ACCEPT
+                       
         
         
 script(src='./Design/script.js')
