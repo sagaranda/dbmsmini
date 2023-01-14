@@ -2,8 +2,8 @@ const sql = require("mysql");
 const jwt = require('jsonwebtoken');
 const db = sql.createConnection({
   host: "localhost",
-  user: "madakari",
-  password: "Oo(6D.Ei]@BllnO9",
+  user: "root",
+  password: "",
   database: "dbmsmini",
 });
 const express = require("express");

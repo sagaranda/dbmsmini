@@ -1,8 +1,8 @@
 const sql = require('mysql');
 const db = sql.createConnection({
     host: "localhost",
-    user: "madakari",
-    password: "Oo(6D.Ei]@BllnO9",
+    user: "root",
+    password: "",
     database: "dbmsmini"
 });
 const app = require('../app');

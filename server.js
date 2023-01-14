@@ -3,8 +3,8 @@ const app = require('./app');
 
 const db=sql.createConnection({
     host: "localhost",
-    user: "madakari",
-    password: "Oo(6D.Ei]@BllnO9",
+    user: "root",
+    password: "",
     database:"dbmsmini"
 });
 db.connect((err)=>{
@@ -26,5 +26,5 @@ res.send("table1 created");
 
 
 
-app.listen(8000,()=>{console.log("listining to port 80")})
+app.listen(8000,()=>{console.log("listining to port 8000")})
 module.exports=db;
